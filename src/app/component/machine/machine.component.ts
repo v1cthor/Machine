@@ -7,7 +7,7 @@ import { Message, MessageService } from 'primeng/api';
   styleUrls: ['./machine.component.css'],
   providers: [MessageService]
 })
-export class MachineComponent implements OnInit {
+export class MachineComponent {
   showName: boolean = true;
   showProductoSelected: boolean = false;
   showtipos: boolean = false;
@@ -16,27 +16,17 @@ export class MachineComponent implements OnInit {
   showCambio: boolean = false;
   showIngresado: boolean = false;
   name: string = '';
-
   costo: number = 0;
   tipo: string = '';
-
   Moneda_1: number = 10;
   Moneda_2: number = 50;
   Moneda_3: number = 100;
-
   coinI: number = 0;
-
   cambioIcon: number = 0;
-
-  msgs1!: Message[];
 
   constructor(
     private messageService: MessageService
   ) { }
-
-  ngOnInit(): void {
-
-  }
 
   validaName() {
     if (this.name.length > 1) {
