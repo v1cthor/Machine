@@ -1,0 +1,71 @@
+.container {
+    margin: 2% 5% auto 5%;
+}
+
+.floatInput {
+    margin-top: 5%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.coinButton {
+    text-align: center;
+}
+
+.nameDiv {
+    text-align: center;
+}
+
+.nameDiv label {
+    font-size: 18px;
+}
+
+
+.buttoncheck {
+    margin-left: 3%;
+
+}
+
+.winput {
+    width: 200px;
+    margin-left: 4%;
+}
+
+.productsDiv {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.errorNameDiv {
+    margin-top: 2%;
+    text-align: center;
+}
+
+.errorNameLabel {
+    color: rgb(184, 0, 0);
+    font-size: 20px;
+
+}
+
+.coin {
+    background-color: rgba(50, 163, 74, 0.788);
+    font-size: 40px;
+    border-style: ridge;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 10px;
+    border-color: rgb(0, 0, 0);
+    margin-left: 1%;
+    color: rgba(0, 0, 0, 0.856);
+    cursor: pointer;
+    user-select: none;
+}
+
+label.coin:hover {
+    background-color: rgba(38, 117, 55, 0.788);
+}
+
+label.coin:active {
+    background-color: rgba(55, 235, 94, 0.788);
+}

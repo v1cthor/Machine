@@ -1,0 +1,74 @@
+<div class="container">
+    <h1>Máquina de alimentos</h1>
+    <hr>
+    <br>
+
+    <div class="nameDiv animate__animated animate__fadeInUp" *ngIf="showName">
+        <h3>Ingresa tu nombre</h3>
+        <input type="text" pInputText [(ngModel)]="name" class="winput" (keyup.enter)="validaName()">
+        <button pButton pRipple type="button" icon="pi pi-check" class="buttoncheck" iconPos="right"
+            (click)="validaName()"></button>
+    </div>
+
+    <div *ngIf="errorName" class="errorNameDiv animate__animated animate__shakeX">
+        <label class="errorNameLabel">Ingresa un nombre</label>
+    </div>
+
+    <div *ngIf="showtipos" class="nameDiv animate__animated animate__fadeInUp">
+        <label>Hola <strong>{{name | titlecase}}</strong> selecciona un producto:</label>
+    </div>
+
+    <div class="productsDiv animate__animated animate__fadeInUp" *ngIf="showtipos">
+        <button pButton pRipple type="button" label="A" class="p-button-outlined buttoncheck"
+            (click)="productoSelected('A')"></button>
+
+        <button pButton pRipple type="button" label="B" class="p-button-outlined p-button-secondary buttoncheck"
+            (click)="productoSelected ('B')"></button>
+        <button pButton pRipple type="button" label="C" class="p-button-outlined p-button-warning buttoncheck"
+            (click)="productoSelected('C')"></button>
+    </div>
+
+    <div class="productsDiv animate__animated animate__fadeInUp" *ngIf="showtipos">
+
+        <label class="buttoncheck">Costo: $270</label>
+        <label class="buttoncheck">Costo: $340</label>
+        <label class="buttoncheck">Costo: $390</label>
+
+    </div>
+
+
+    <div *ngIf="showProductoSelected" class="nameDiv animate__animated animate__fadeInUp">
+        <label><strong>{{name | titlecase}}</strong> seleccionaste el producto <strong>{{tipo}}</strong> y tiene un
+            costo de: <strong>{{costo | currency}}</strong>, Has ingresado: <strong>{{coinI |
+                currency}}</strong></label>
+        <br>
+    </div>
+
+    <br>
+
+    <div *ngIf="showIcon" class="coinButton animate__animated animate__fadeInUp">
+        <label>Ingrese la moneda:</label>
+        <br><br>
+        <label (click)="entercoin(10)" class="coin">&nbsp;$10&nbsp;</label>
+        <label (click)="entercoin(50)" class="coin">&nbsp;$50&nbsp;</label>
+        <label (click)="entercoin(100)" class="coin">&nbsp;$100&nbsp;</label>
+    </div>
+
+    <div *ngIf="showIngresado">
+        <h2>Ingresaste: </h2>
+    </div>
+
+    <p-messages key="tl"></p-messages>
+
+    <hr *ngIf="showCambio">
+    <div *ngIf="showCambio">
+        <h2>Su cambio es: </h2>
+
+    </div>
+    <p-messages key="tls"></p-messages>
+
+    <button *ngIf="showCambio" pButton pRipple type="button" label="Hacer otra compra" (click)="refresh()"
+        class="p-button-raised p-button-secondary"></button>
+
+
+</div>
